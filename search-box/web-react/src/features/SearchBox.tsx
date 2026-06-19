@@ -1,25 +1,32 @@
 import type { SWPeopleI } from "@app/shared/types";
+import { useSearch } from "./search-box";
 
 interface SearchBoxI {
   placeholderText: string;
-  fn: (keyword: string) => void;
-  boxItems: SWPeopleI[];
 }
 
-export default function SearchBox({ placeholderText, fn, boxItems }: SearchBoxI) {
+function DisplayBoxItems({ items }: { items: SWPeopleI[] }) {
+  return (
+    <ul>
+      {
+        items?.map((item: SWPeopleI, index: number) => {
+          return <li key={index.toString()}> {item.name} </li>
+        })
+      }
+    </ul>
+  );
+}
+
+export default function SearchBox({ placeholderText }: SearchBoxI) {
+  const { boxItems, handleSearch } = useSearch();
+
   return (
     <>
-      <input 
-        type="text" 
-        placeholder={placeholderText} 
-        onChange={(evt: React.ChangeEvent<HTMLInputElement>) => {fn(evt.target.value)}} />
-      <ul>
-        {
-          boxItems?.map((item: SWPeopleI, index: number) => {
-            return <li key={index.toString()}> {item.name} </li>
-          })
-        }
-      </ul>
+      <input
+        type="text"
+        placeholder={placeholderText}
+        onChange={handleSearch} />
+      <DisplayBoxItems items={boxItems} />
     </>
   )
 }
