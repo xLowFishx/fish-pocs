@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { MainLogo } from "../../components/main-logo/main-logo";
+import { SearchBox } from "../../features/search-box/search-box.component";
 
 @Component({
   selector: 'app-home',
-  imports: [MainLogo],
+  imports: [MainLogo, SearchBox],
   template: `
   <main class="main">
     <div class="content">
       <div>
         <app-main-logo />
         <h1> Search Box </h1>
-        <input type="box" />
+        <app-search-box />
       </div>
     </div>
   </main>
