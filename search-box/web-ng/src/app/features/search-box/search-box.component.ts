@@ -1,7 +1,7 @@
 import { Component, viewChild, ViewChild, ElementRef, inject, signal } from '@angular/core';
-import { HttpService } from '../../core/services/http.service';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { HttpService } from '../../core/services/http.service';
 
 @Component({
   selector: 'app-search-box',
@@ -44,15 +44,24 @@ export class SearchBox {
       });
   }
 
+  ngOnDestroy() {
+    this.handleInputSearch$.complete(); // Avoiding any mem leak
+  }
+
   handleInputSearch(evt: Event, inputSearchTemplateRef: any) {
-    const evtTarget = evt.target as HTMLInputElement;
+    const value = this.inputSearchQuery()?.nativeElement.value;
 
     console.group("Getting input val in 4 different ways | Recommendation Ranking");
     console.log(`Using template ref: ${inputSearchTemplateRef.value}`);
     console.log(`Using view child signal fn: ${this.inputSearchQuery()?.nativeElement.value}`);
     console.log(`Using view child decorator: ${this.inputSearchDecorator.nativeElement.value}`);
-    console.log(`Using event target: ${evtTarget.value}`);
+    console.log(`Using event target: ${(evt.target as HTMLInputElement).value}`);
     console.groupEnd();
+
+    if (value?.trim() === '') {
+      this.resultSearch.set([]);
+      return;
+    }
 
     this.handleInputSearch$.next(this.inputSearchQuery()?.nativeElement.value || '');
   }
