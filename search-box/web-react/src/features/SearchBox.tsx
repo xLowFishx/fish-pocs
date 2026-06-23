@@ -9,8 +9,8 @@ function DisplayBoxItems({ items }: { items: SWPeopleI[] }) {
   return (
     <ul>
       {
-        items?.map((item: SWPeopleI, index: number) => {
-          return <li key={index.toString()}> {item.name} </li>
+        items?.map((item: SWPeopleI) => {
+          return <li key={item.url}> {item.name} </li>
         })
       }
     </ul>
