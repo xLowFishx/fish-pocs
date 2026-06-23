@@ -22,7 +22,8 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Absolute path */
-    "paths" : {
+    "baseUrl": ".",
+    "paths": {
       "@app/*": ["./src/*"]
     }
   },
