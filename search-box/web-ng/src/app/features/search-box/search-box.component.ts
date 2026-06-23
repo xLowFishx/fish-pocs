@@ -8,7 +8,7 @@ import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs
   imports: [],
   template: `
     <div>
-      <input #inputSearch type="text" (input)="handleInputSearch($event, inputSearch)"/>
+      <input #inputSearch type="text" aria-label="Search" placeholder="Search people..." (input)="handleInputSearch($event, inputSearch)" />
       <ul>
         @for (item of resultSearch(); track $index) {
           <li> {{ item.name }} </li>
