@@ -5,3 +5,6 @@ web-react/.vscode/*
 .gitignore.swp
 .DS_Store
 .editorconfig
+
+# Settings
+*.json
