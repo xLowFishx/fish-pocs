@@ -1,0 +1,10 @@
+# Node
+web-ng/node-modules
+web-react/node_modules
+web-react/.vscode/*
+.gitignore.swp
+.DS_Store
+.editorconfig
+
+# Settings
+*.json
