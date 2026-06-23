@@ -1,0 +1,5 @@
+- [ ] Move the logic out of the Home page
+- [ ] Add debounce for every keystroke
+- [ ] Implement memo, useMemo, and useCallback if necessary.
+- [ ] Display results in a wrapped view with inner scroll.
+- [ ] Expand the serach box according to its placeholder text
