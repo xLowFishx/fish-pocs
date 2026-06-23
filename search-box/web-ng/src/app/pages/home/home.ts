@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MainLogo } from "../../components/main-logo/main-logo";
-import { SearchBox } from "../../features/search-box/search-box.component";
+import { MainLogo } from '../../components/main-logo/main-logo';
+import { SearchBox } from '../../features/search-box/search-box.component';
 
 @Component({
   selector: 'app-home',
