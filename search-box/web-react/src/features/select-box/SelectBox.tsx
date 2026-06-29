@@ -1,3 +1,5 @@
+import type { ChangeEventHandler } from "react"
+
 interface OptionsI {
   key: string,
   value: string
@@ -5,16 +7,19 @@ interface OptionsI {
 
 interface SelectBoxI {
   defaultTextOption: string,
-  options: OptionsI[]
+  options: OptionsI[],
+  handleChange?: ChangeEventHandler<HTMLSelectElement>
 }
 
-export default function SelectBox({ defaultTextOption, options }: SelectBoxI) {
+export default function SelectBox({ defaultTextOption, options, handleChange }: SelectBoxI) {
   return (
-    <select>
+    <select onChange={handleChange}>
       <option value=""> {defaultTextOption} </option>
       {
         options.map((opt: OptionsI) => (
-          <option key={opt.key} value={opt.key}>
+          <option 
+            key={opt.key} 
+            value={opt.key}>
             {opt.value}
           </option>
         ))

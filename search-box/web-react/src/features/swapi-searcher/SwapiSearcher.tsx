@@ -28,7 +28,7 @@ export default function SwapiSearcher() {
     <>
       <h1>Search Box</h1>
       <div>
-        <SelectBox defaultTextOption='-- Choose an option --' options={options} />
+        <SelectBox defaultTextOption='-- Choose an option --' options={options} handleChange={(evt) => console.log(evt.target.value)}/>
         <SearchBox placeholderText="Type a star wars character" />
       </div>
     </>
