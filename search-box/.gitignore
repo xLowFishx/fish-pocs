@@ -1,10 +1,17 @@
-# Node
+# Node dependencies
+node_modules
 web-ng/node-modules
 web-react/node_modules
-web-react/.vscode/*
-.gitignore.swp
-.DS_Store
-.editorconfig
 
-# Settings
-*.json
+# Editor and IDE files
+web-react/.vscode/*
+settings.json
+
+# OS and local environment files
+.DS_Store
+
+# Local temp/swap files
+.gitignore.swp
+
+# Root/editor config files to ignore in this repo
+.editorconfig

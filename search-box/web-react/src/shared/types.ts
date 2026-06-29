@@ -28,5 +28,6 @@ export const Gender = {
 export type Gender = typeof Gender[keyof typeof Gender];
 
 export const SWAPI = {
+  INFO: "https://swapi.info/api/",
   PEOPLE: "https://swapi.info/api/people"
 }
