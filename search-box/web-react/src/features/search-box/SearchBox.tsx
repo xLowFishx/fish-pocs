@@ -1,6 +1,11 @@
 import type { SWPeopleI } from "@app/shared/types";
 import { useSearch } from "./search-box";
 
+/*
+How to improve the performance of this comp?
+1. Memoized the DisplayBoxItems component so that it only re-renders when its props change compared to the previous one
+*/
+
 interface SearchBoxI {
   placeholderText: string;
 }
