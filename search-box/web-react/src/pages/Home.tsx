@@ -1,6 +1,6 @@
 import Spacer from '@app/components/Spacer'
 import MainLogo from '@app/components/MainLogo'
-import SearchBox from '@app/features/SearchBox'
+import SwapiSearcher from '@app/features/swapi-searcher/SwapiSearcher'
 
 function HomeStyles() {
   return <style href="center" precedence='component'>
@@ -29,8 +29,7 @@ export default function Home() {
       <Spacer />
       <section id="center">
         <MainLogo />
-        <h1>Search Box</h1>
-        <SearchBox placeholderText="Type a star wars character" />
+        <SwapiSearcher />
       </section>
       <Spacer />
     </>
