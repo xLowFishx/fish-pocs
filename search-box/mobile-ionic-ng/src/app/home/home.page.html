@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mobile Ionic + Angular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Basic Ionic Angular starter</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>
+        This app uses Angular standalone APIs for the app layer and Ionic components for the UI layer.
+      </p>
+      <ion-button expand="block" fill="outline" routerLink="/">
+        Router handled by Angular, transition handled by Ionic
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list inset="true">
+    @for (layer of appLayers; track layer.title) {
+      <ion-item>
+        <ion-label>
+          <h2>{{ layer.title }}</h2>
+          <p>{{ layer.description }}</p>
+        </ion-label>
+      </ion-item>
+    }
+  </ion-list>
+
+  <ion-note class="runtime-note">
+    Capacitor is only involved when you build/sync/run the app as a native mobile app.
+    During regular browser development, this is still an Angular web app rendered with Ionic UI components.
+  </ion-note>
+</ion-content>
