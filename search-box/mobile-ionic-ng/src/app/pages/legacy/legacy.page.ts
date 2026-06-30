@@ -7,38 +7,20 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonContent,
-  IonHeader,
   IonItem,
   IonLabel,
   IonList,
-    IonNote,
-    IonTitle,
-    IonToolbar,
+  IonNote,
 } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-legacy-page',
   standalone: true,
-  imports: [
-    IonButton,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCardTitle,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonNote,
-    IonTitle,
-    IonToolbar,
-    RouterLink,
-  ],
+  imports: [IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonItem, IonLabel, IonList, IonNote, RouterLink],
+  templateUrl: './legacy.page.html',
+  styleUrls: ['./legacy.page.scss'],
 })
-export class HomePage {
+export class LegacyPage {
   readonly appLayers = [
     {
       title: 'Angular app layer',
@@ -57,10 +39,4 @@ export class HomePage {
       description: 'Runs the same Angular + Ionic UI in a normal browser during day-to-day development.',
     },
   ];
-
-  // Angular lifecycle hooks like ngOnInit still work.
-  // Ionic page hooks like ionViewWillEnter become useful when data should refresh on every visit.
-  ionViewWillEnter(): void {
-    console.info('HomePage entered via Ionic navigation lifecycle.');
-  }
 }
